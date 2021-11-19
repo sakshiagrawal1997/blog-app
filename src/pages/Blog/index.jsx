@@ -5,8 +5,7 @@ import Chip from '../../components/common/Chip';
 import EmptyList from '../../components/common/EmptyList';
 import './style.css';
 import { Link } from 'react-router-dom';
-
-
+import Comment from '../../components/Comments/Comment';
 const Blog = () => {
         const { id } = useParams();
         const [blog, setBlog] = useState(null);
@@ -38,10 +37,14 @@ const Blog = () => {
           </header>
           <img src={blog.cover} alt='cover' />
           <p className='blog-desc'>{blog.description}</p>
+          <Comment blogId = {id} />
         </div>
       ) : (
         <EmptyList />
+
       )}
+        
+        
         </div>
     );
 };
